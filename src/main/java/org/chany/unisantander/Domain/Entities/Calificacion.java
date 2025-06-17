@@ -32,8 +32,10 @@ public class Calificacion {
     @Column(precision = 3, scale = 1)
     private Double corte1;
 
+    @Column(precision = 3, scale = 1)
     private Double corte2;
 
+    @Column(precision = 3, scale = 1)
     private Double corte3;
 
     @Transient //Es calculada en la BD
