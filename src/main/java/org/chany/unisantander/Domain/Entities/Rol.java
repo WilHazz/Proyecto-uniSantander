@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,7 +22,8 @@ public class Rol {
     private  Long Id;
 
     @Column(name = "nombre_rol", nullable = false, length = 30, unique = true)
-    private String nombrerol;
+    private String nombreRol;
 
-
+    @ManyToMany(mappedBy = "roles")
+    private Set<Usuario> usuarios;
 }
