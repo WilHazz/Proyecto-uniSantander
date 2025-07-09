@@ -17,15 +17,16 @@ public class Prestamo {
     @Column(name = "id_prestamo")
     private Long Id;
 
-    @Column(name = "codigo_estudiante", nullable = false, length = 6)
-    private String codigoEstudiante;
+    @ManyToOne
+    @JoinColumn(name = "codigo_estudiante", referencedColumnName = "codigoEstudiante")
+    private Alumno Alumno;
 
     @ManyToOne
     @JoinColumn(name = "id_libro", nullable = false)
     private  Libro libro;
 
     @Column(name = "fecha_prestamo", nullable = false)
-    private LocalDateTime fechaPrestamo;
+    private LocalDateTime fechaPrestamo = LocalDateTime.now();
 
     @Column(name = "fecha_devolucion_estimada", nullable = false)
     private LocalDate fechaDevolucionEstimada;

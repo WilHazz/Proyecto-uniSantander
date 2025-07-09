@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
@@ -17,8 +18,8 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(table = "id_usuario")
-    private long id;
+    @Column(name = "id_usuario")
+    private Long id;
 
     @Column(unique = true, nullable = false, length = 50)
     private String username;
@@ -30,7 +31,7 @@ public class Usuario {
     private String correo;
 
     @Column(name = "fecha_creacion")
-    private LocalDate fechareacion = LocalDate.now();
+    private LocalDateTime fechaCreacion = LocalDateTime.now();
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
