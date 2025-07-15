@@ -19,7 +19,7 @@ public class Calificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_calificacion")
-    private Long Id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "id_materia_estudiante", nullable = false)

@@ -15,11 +15,11 @@ public class Prestamo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_prestamo")
-    private Long Id;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "codigo_estudiante", referencedColumnName = "codigoEstudiante")
-    private Alumno Alumno;
+    @JoinColumn(name = "id_alumno", nullable = false)
+    private Alumno alumno;
 
     @ManyToOne
     @JoinColumn(name = "id_libro", nullable = false)

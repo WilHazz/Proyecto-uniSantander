@@ -21,7 +21,7 @@ public class Periodo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_periodo")
-    private Long Id;
+    private Long id;
 
     @Column(length = 50, nullable = false)
     private String nombre;

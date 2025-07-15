@@ -1,5 +1,6 @@
 package org.chany.unisantander.Domain.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class Usuario {
     @Column(unique = true, nullable = false, length = 50)
     private String username;
 
+    @JsonIgnore
     @Column(nullable = false, length = 255)
     private String password;
 
@@ -33,6 +35,7 @@ public class Usuario {
     @Column(name = "fecha_creacion")
     private LocalDateTime fechaCreacion = LocalDateTime.now();
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "usuario_roles",
