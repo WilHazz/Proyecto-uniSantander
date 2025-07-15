@@ -43,4 +43,9 @@ public class Usuario {
             inverseJoinColumns =  @JoinColumn(name = "id_rol")
     )
     private Set<Rol>roles;
+
+    @PrePersist
+    protected  void prePersist(){
+        this.fechaCreacion = LocalDateTime.now();
+    }
 }
