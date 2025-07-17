@@ -18,7 +18,7 @@ public class Prestamo {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_alumno", nullable = false)
+    @JoinColumn(name = "codigo_estudiante", referencedColumnName = "codigoEstudiante")
     private Alumno alumno;
 
     @ManyToOne

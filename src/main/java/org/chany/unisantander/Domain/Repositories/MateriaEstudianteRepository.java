@@ -24,4 +24,7 @@ public interface MateriaEstudianteRepository extends JpaRepository<MateriaEstudi
             "WHERE me.alumno.correo = :correo")
 
     List<MateriaEstudiante> findByAlumnoCorreoWithDetails(@Param("correo") String correo);
+
+    //SI Desea Filtrar por materias:
+    //List<MateriaEstudiante> findByMateria_Id(Long idMateria);
 }

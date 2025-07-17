@@ -22,4 +22,7 @@ public interface MateriaProfesorRepository extends JpaRepository<MateriaProfesor
             "WHERE mp.profesor.correo = :correo")
 
     List<MateriaProfesor> findByProfesorCorreoWithDetails(@Param("correo") String correo);
+
+    //Verificar si un profesor ya tiene una materia asignada en un período: Evita duplicados
+    //boolean existsByProfesor_IdAndMateria_IdAndPeriodo_Id(Long idProfesor, Long idMateria, Long idPeriodo);
 }

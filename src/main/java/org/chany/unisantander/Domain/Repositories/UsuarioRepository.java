@@ -11,4 +11,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     //Metodos para validar existencia por identificación
     boolean existsByUsername(String username);
     boolean existsByCorreo(String correo);
+
+    //Username para auntenticar
+    //Optional<Usuario> findByUsername(String username);
+
+    //Buscar Usuarios por correo ignorando mayúsculas/minúsculas
+    Optional<Usuario> findByCorreoIgnoreCase(String correo);
 }
